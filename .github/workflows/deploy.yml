@@ -1,4 +1,3 @@
-# اسم الـ Workflow اللي هيظهر في صفحة Actions
 name: Deploy Glowette Website
 
 on:
@@ -25,7 +24,7 @@ jobs:
         run: flutter pub get
 
       - name: Build web app 🏗️
-        run: flutter build web --release --base-href /${{ glowtte-website }}/
+        run: flutter build web --release --base-href /${{ github.event.repository.glowtte-website }}/
 
       - name: Deploy to GitHub Pages 🚀
         uses: peaceiris/actions-gh-pages@v4
